@@ -1,0 +1,4 @@
+Sudoku is a popular puzzle game where a player completes a grid based on some provided cells.
+The user must put the numbers 1 through n into each row, column, and box, where n is the size of the n by n grid.
+The grid is broken down into n rows, n, columns, and n boxes, each seperate entity must contain one and only one
+instance of each of the numbers one through n.
