@@ -1,0 +1,37 @@
+Brandon Aubrey
+Lab 5
+Templated Sudoku
+2/24/2015
+
+Repository url: https://github.com/baubs/Sudoku
+
+The user starts up the program by typing into the comand line "sudoku" while in
+the directory "lab5/Sudoku/Part3". One the program is launched, the user is 
+prompted to input the number (1-9) they wish to add next, or 0 to quit playing.
+If an invalid number is entered, an error message is displayed and the user
+is prompted again. Once a valid number is inputed, the user is prompted for a set of coordinates, (row, column) seperated by whitespace. Again input is checked,
+if invalid an error message is displayed, otherwise the program checks the move
+to see if its valid. If the move is not valid an error message is displayed, and
+the process is restarted. This contiunes until the user either finishes the 
+puzzle or decideds to quit.
+
+The program is driven by "Sudoku.cpp" which simply creates a puzzle of type int
+and uses a while loop to continuesly propmpt the user for input until either the
+user wishes to quit or the puzzle is solved. Within the loop, the input is 
+checked for errors and then sent to the puzzle object via the member function
+inputValue of the puzzle class. InputValue calls check to validate the user 
+input, then either updates the board or prints the number cooresponding to the 
+check function output. The function check calls four other 
+member functions which use indexing and the 2D vector board to check that the 
+row,column, and box of the cooridnates inputed by the user do not already 
+contain the value also inputed by the user. If the input is valid check returns 
+0 and inputValue can update the board. If the input is invalid check returns
+a number to indicate where the value failed. (1 - value is already in the row;
+2 - value is already in the column; 3 value is in the box). In order to check
+if the game is finished, the driver calls the finished function with every pass
+of the while loop. finished is a member function of puzzle, which simple checks
+the board for any 0's(empty) and returns 0 if any are found indicating the game
+is not over. If none are found, 1 is returned, and the loop is exited(puzzle is
+finished).
+
+ 
